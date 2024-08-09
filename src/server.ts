@@ -7,7 +7,6 @@ const wss = new WebSocketServer({ port: 8080 });
 const sockets = new Set<WebSocket>();
 
 wss.on("connection", (ws: WebSocket) => {
-  console.log("new connection");
   sockets.add(ws);
 
   ws.onmessage = (event) => {
